@@ -22,5 +22,7 @@ public class GettingStarted {
     @Test
     public void declarativeApproachUsingStreams() throws Exception {
         List<Person> people = MockData.getPeople();
+        List<Person> youngPeople = people.stream().filter(p -> p.getAge() <= 18).limit(10).toList();
+        youngPeople.forEach(System.out::println);
     }
 }
